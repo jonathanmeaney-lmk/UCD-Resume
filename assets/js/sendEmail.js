@@ -1,8 +1,8 @@
 function sendMail(contactForm) {
-    emailjs.send("service_xpjdedb", "template_oqrgzfs", {
-        "from_name": contactForm.fullname.value,
+    emailjs.send("service_mt93fkl", "template_oqrgzfs", {
+        "from_name": contactForm.name.value,
         "from_email": contactForm.emailaddress.value,
-        "project_request": contactForm.projectsummary.value,
+        "project_request": contactForm.projectsummary.value
     });
 
     then(
@@ -10,7 +10,9 @@ function sendMail(contactForm) {
             console.log("SUCCESS", response);
         },
         function(error) {
-            console.log("FAILED", error)
+            console.log("FAILED", error);
         }
-    )
-}
+    );
+    return false;  // To block from loading a new page
+
+  }
